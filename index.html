@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARA Coffee Roastery</title>
+    <!-- Google Font 'Poppins' biar UI keliatan berkelas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- PROFIL CAFE -->
+        <div class="profile-wrapper">
+            <div class="avatar-glow">
+                <!-- Icon Secangkir Kopi Modern -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="coffee-icon">
+                    <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+                    <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
+                    <line x1="6" y1="2" x2="6" y2="4" />
+                    <line x1="10" y1="2" x2="10" y2="4" />
+                    <line x1="14" y1="2" x2="14" y2="4" />
+                </svg>
+            </div>
+            <h1 class="cafe-name">ARA Coffee Roastery</h1>
+            <p class="username">@ara.roastery</p>
+            <p class="cafe-tagline">Specialty Coffee & Roastery</p>
+        </div>
+
+        <!-- TOMBOL NAVIGASI -->
+        <div class="link-wrapper">
+            <a href="https://maps.app.goo.gl/EJks3vv3VEHFjP3z7" target="_blank" class="btn-link">
+                <span class="icon">📍</span> Kunjungi Lokasi (Maps)
+            </a>
+        </div>
+
+        <!-- SECTION MENU ONLINE 3 KATEGORI -->
+        <div class="menu-container">
+            <h3>📖 Highlight Menu</h3>
+            
+            <!-- Tombol Pindah Kategori -->
+            <div class="menu-tabs">
+                <button class="tab-btn active" onclick="switchMenu('coffee-based')">Coffee Based</button>
+                <button class="tab-btn" onclick="switchMenu('coffee-mocktail')">Coffee Mocktail</button>
+                <button class="tab-btn" onclick="switchMenu('non-coffee')">Non-Coffee</button>
+            </div>
+
+            <!-- Kategori 1: COFFEE BASED -->
+            <div id="coffee-based" class="menu-list active">
+                <div class="menu-item">
+                    <span class="menu-name">Espresso</span>
+                    <span class="menu-price">20k</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-name">Americano</span>
+                    <span class="menu-price">23k</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-name">Cafe Latte</span>
+                    <span class="menu-price">28k</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-name">Flavour Latte</span>
+                    <span class="menu-price">30k</span>
+                </div>
+            </div>
+
+            <!-- Kategori 2: COFFEE MOCKTAIL -->
+            <div id="coffee-mocktail" class="menu-list">
+                <div class="menu-item">
+                    <span class="menu-name">Black Citrus</span>
+                    <span class="menu-price">28k</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-name">Sunset Espresso</span>
+                    <span class="menu-price">30k</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-name">Berry Coffee Fizz</span>
+                    <span class="menu-price">32k</span>
+                </div>
+            </div>
+
+            <!-- Kategori 3: NON-COFFEE -->
+            <div id="non-coffee" class="menu-list">
+                <div class="menu-item">
+                    <span class="menu-name">Matcha Latte</span>
+                    <span class="menu-price">28k</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-name">Premium Chocolate</span>
+                    <span class="menu-price">28k</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-name">Charcoal Latte</span>
+                    <span class="menu-price">30k</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-name">Artisan Tea</span>
+                    <span class="menu-price">25k</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- INFO JAM OPERASIONAL -->
+        <div class="info-box">
+            <h3>🕒 Jam Operasional</h3>
+            <div class="schedule">
+                <div class="day-row"><span>Setiap Hari</span> <strong>10.00 - 22.00 WIB</strong></div>
+            </div>
+        </div>
+        
+        <!-- FOOTER BRANDING VALZMEDIA -->
+        <footer class="footer">
+            <p>Website Developed by <span>ValzMedia</span></p>
+        </footer>
+    </div>
+
+    <!-- JAVASCRIPT UNTUK 3 TAB MENU -->
+    <script>
+        function switchMenu(category) {
+            document.getElementById('coffee-based').classList.remove('active');
+            document.getElementById('coffee-mocktail').classList.remove('active');
+            document.getElementById('non-coffee').classList.remove('active');
+            
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(category).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
