@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ARA Coffee Roastery</title>
-    <!-- Google Font 'Poppins' biar UI keliatan berkelas -->
+    <!-- Google Font 'Poppins' Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Efek Cahaya Latar Belakang Bergerak -->
+    <div class="bg-glow"></div>
+
     <div class="container">
         
-        <!-- PROFIL CAFE -->
+        <!-- PROFIL CAFE PREMIUM -->
         <div class="profile-wrapper">
             <div class="avatar-glow">
-                <!-- Icon Secangkir Kopi Modern -->
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="coffee-icon">
+                <!-- Icon Secangkir Kopi Emas -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#e5c158" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="coffee-icon">
                     <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
                     <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
                     <line x1="6" y1="2" x2="6" y2="4" />
@@ -26,108 +29,142 @@
                     <line x1="14" y1="2" x2="14" y2="4" />
                 </svg>
             </div>
-            <h1 class="cafe-name">ARA Coffee Roastery</h1>
-            <p class="username">@ara.roastery</p>
-            <p class="cafe-tagline">Specialty Coffee & Roastery</p>
+            <h1 class="cafe-name">ARA COFFEE</h1>
+            <p class="cafe-tagline">Roastery & Specialty Bar</p>
+            <div class="status-badge"><span class="dot"></span> Open Today</div>
         </div>
 
-        <!-- TOMBOL NAVIGASI -->
+        <!-- REKAYASA TOMBOL NAVIGASI PREMIUM -->
         <div class="link-wrapper">
-            <a href="https://maps.app.goo.gl/EJks3vv3VEHFjP3z7" target="_blank" class="btn-link">
-                <span class="icon">📍</span> Kunjungi Lokasi (Maps)
+            <a href="https://wa.me/628xxxxxxxxxx?text=Halo%20ARA%20Coffee,%20gua%20mau%20order%20kopinya%20dong!" target="_blank" class="btn-link main-btn">
+                <span class="btn-content">
+                    <span class="icon">⚡</span> 
+                    <span class="text">Order Instant via WhatsApp</span>
+                </span>
+            </a>
+            <a href="https://google.com/maps/place/ARA+Coffee+Roastery" target="_blank" class="btn-link sub-btn">
+                <span class="btn-content">
+                    <span class="icon">📍</span> 
+                    <span class="text">Find Us on Google Maps</span>
+                </span>
             </a>
         </div>
 
-        <!-- SECTION MENU ONLINE 3 KATEGORI -->
+        <!-- SECTION MENU ONLINE DENGAN BADGE -->
         <div class="menu-container">
-            <h3>📖 Highlight Menu</h3>
+            <div class="menu-header">
+                <h2>EXPERIENCE OUR MENU</h2>
+                <p>Crafted with premium local beans</p>
+            </div>
             
-            <!-- Tombol Pindah Kategori -->
+            <!-- Tab Menu Mewah -->
             <div class="menu-tabs">
                 <button class="tab-btn active" onclick="switchMenu('coffee-based')">Coffee Based</button>
-                <button class="tab-btn" onclick="switchMenu('coffee-mocktail')">Coffee Mocktail</button>
+                <button class="tab-btn" onclick="switchMenu('coffee-mocktail')">Mocktail</button>
                 <button class="tab-btn" onclick="switchMenu('non-coffee')">Non-Coffee</button>
             </div>
 
             <!-- Kategori 1: COFFEE BASED -->
             <div id="coffee-based" class="menu-list active">
-                <div class="menu-item">
-                    <span class="menu-name">Espresso</span>
+                <div class="menu-card">
+                    <div class="menu-info">
+                        <span class="menu-name">Espresso</span>
+                        <p class="menu-desc">Pure rich extraction</p>
+                    </div>
                     <span class="menu-price">20k</span>
                 </div>
-                <div class="menu-item">
-                    <span class="menu-name">Americano</span>
-                    <span class="menu-price">23k</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-name">Cafe Latte</span>
+                <div class="menu-card signature">
+                    <div class="menu-info">
+                        <span class="menu-name">Cafe Latte <span class="badge">Signature</span></span>
+                        <p class="menu-desc">Espresso with silky steamed milk</p>
+                    </div>
                     <span class="menu-price">28k</span>
                 </div>
-                <div class="menu-item">
-                    <span class="menu-name">Flavour Latte</span>
+                <div class="menu-card">
+                    <div class="menu-info">
+                        <span class="menu-name">Americano</span>
+                        <p class="menu-desc">Double shot espresso with water</p>
+                    </div>
+                    <span class="menu-price">23k</span>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-info">
+                        <span class="menu-name">Flavour Latte</span>
+                        <p class="menu-desc">Vanilla / Hazelnut / Caramel</p>
+                    </div>
                     <span class="menu-price">30k</span>
                 </div>
             </div>
 
             <!-- Kategori 2: COFFEE MOCKTAIL -->
             <div id="coffee-mocktail" class="menu-list">
-                <div class="menu-item">
-                    <span class="menu-name">Black Citrus</span>
+                <div class="menu-card premium">
+                    <div class="menu-info">
+                        <span class="menu-name">Black Citrus <span class="badge gold">Must Try</span></span>
+                        <p class="menu-desc">Espresso mixed with fresh sparkling lemon</p>
+                    </div>
                     <span class="menu-price">28k</span>
                 </div>
-                <div class="menu-item">
-                    <span class="menu-name">Sunset Espresso</span>
+                <div class="menu-card">
+                    <div class="menu-info">
+                        <span class="menu-name">Sunset Espresso</span>
+                        <p class="menu-desc">Fruity notes layered with coffee</p>
+                    </div>
                     <span class="menu-price">30k</span>
                 </div>
-                <div class="menu-item">
-                    <span class="menu-name">Berry Coffee Fizz</span>
+                <div class="menu-card">
+                    <div class="menu-info">
+                        <span class="menu-name">Berry Coffee Fizz</span>
+                        <p class="menu-desc">Strawberry baseline, soda, and cold brew</p>
+                    </div>
                     <span class="menu-price">32k</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-name">ARAMANIS</span>
-                    <span class="menu-price">23k</span>
                 </div>
             </div>
 
             <!-- Kategori 3: NON-COFFEE -->
             <div id="non-coffee" class="menu-list">
-                <div class="menu-item">
-                    <span class="menu-name">Matcha Latte</span>
+                <div class="menu-card">
+                    <div class="menu-info">
+                        <span class="menu-name">Matcha Latte</span>
+                        <p class="menu-desc">Pure Uji matcha with fresh milk</p>
+                    </div>
                     <span class="menu-price">28k</span>
                 </div>
-                <div class="menu-item">
-                    <span class="menu-name">Premium Chocolate</span>
+                <div class="menu-card premium">
+                    <div class="menu-info">
+                        <span class="menu-name">Premium Chocolate <span class="badge">Best Seller</span></span>
+                        <p class="menu-desc">Rich and bold dark cocoa</p>
+                    </div>
                     <span class="menu-price">28k</span>
                 </div>
-                <div class="menu-item">
-                    <span class="menu-name">Charcoal Latte</span>
+                <div class="menu-card">
+                    <div class="menu-info">
+                        <span class="menu-name">Charcoal Latte</span>
+                        <p class="menu-desc">Artisanal activated charcoal mix</p>
+                    </div>
                     <span class="menu-price">30k</span>
                 </div>
-                <div class="menu-item">
-                    <span class="menu-name">Artisan Tea</span>
-                    <span class="menu-price">25k</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-name">Thai Tea</span>
-                    <span class="menu-price">13k</span>
-                </div>
             </div>
+        </div>
 
-        <!-- INFO JAM OPERASIONAL -->
+        <!-- INFO OPERASIONAL LUXURY -->
         <div class="info-box">
-            <h3>🕒 Jam Operasional</h3>
-            <div class="schedule">
-                <div class="day-row"><span>Setiap Hari</span> <strong>10.00 - 22.00 WIB</strong></div>
+            <div class="info-header">
+                <span class="info-icon">🕒</span>
+                <div>
+                    <h4>Operational Hours</h4>
+                    <p>Everyday / 10.00 - 22.00 WIB</p>
+                </div>
             </div>
         </div>
         
         <!-- FOOTER BRANDING VALZMEDIA -->
         <footer class="footer">
-            <p>Website Developed by <span>ValzMedia</span></p>
+            <p>Designed by <span>ValzMedia</span></p>
         </footer>
     </div>
 
-    <!-- JAVASCRIPT UNTUK 3 TAB MENU -->
+    <!-- JAVASCRIPT ANIMASI TAB MENU -->
     <script>
         function switchMenu(category) {
             document.getElementById('coffee-based').classList.remove('active');
