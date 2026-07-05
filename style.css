@@ -1,141 +1,200 @@
-/* RESET & INDAHKAN FONTS */
+/* RESET & FONTS GLOBAL */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
-    background: radial-gradient(circle at top, #2c2520 0%, #12100e 100%);
-    color: #f5f5f5;
+    background: #0b0908;
+    color: #e6e6e6;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 30px 20px;
+    padding: 40px 20px;
+    overflow-x: hidden;
+    position: relative;
 }
 
-/* CONTAINER UTAMA (Glassmorphism Effect) */
+/* EFEK GLOWING BACKGROUND BERGERAK (AMBIFLUX) */
+.bg-glow {
+    position: fixed;
+    top: -25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(229, 193, 88, 0.08) 0%, rgba(0,0,0,0) 70%);
+    z-index: 0;
+    pointer-events: none;
+    animation: pulseGlow 8s infinite alternate ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0% { opacity: 0.6; transform: translateX(-50%) scale(1); }
+    100% { opacity: 1; transform: translateX(-50%) scale(1.2); }
+}
+
+/* CONTAINER UTAMA (LUXURY GLASS) */
 .container {
     width: 100%;
-    max-width: 410px;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 24px;
-    padding: 35px 20px;
+    max-width: 420px;
+    background: rgba(20, 18, 16, 0.65);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 32px;
+    padding: 40px 24px;
     text-align: center;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255,255,255,0.1);
+    z-index: 1;
 }
 
-/* AVATAR GLOW */
+/* PROFIL HEADER KAFE MEWAH */
 .avatar-glow {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 15px auto;
-    background: rgba(212, 175, 55, 0.05);
-    border: 1.5px solid rgba(212, 175, 55, 0.4);
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 20px auto;
+    background: linear-gradient(145deg, rgba(30,27,24,1), rgba(15,13,12,1));
+    border: 1px solid rgba(229, 193, 88, 0.3);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4), 0 0 15px rgba(229, 193, 88, 0.05);
 }
 
-.coffee-icon { width: 40px; height: 40px; }
-.cafe-name { font-size: 25px; font-weight: 700; color: #ffffff; letter-spacing: -0.5px; }
-.username { font-size: 13px; color: #d4af37; font-weight: 600; margin-bottom: 6px; }
-.cafe-tagline { font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: #a0a0a0; margin-bottom: 30px; }
+.coffee-icon { width: 38px; height: 38px; }
 
-/* NAVIGASI TOMBOL */
-.link-wrapper { display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px; }
+.cafe-name { 
+    font-size: 26px; 
+    font-weight: 700; 
+    color: #ffffff; 
+    letter-spacing: 2px; 
+    text-transform: uppercase;
+    background: linear-gradient(180deg, #ffffff 0%, #b3b3b3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cafe-tagline { font-size: 11px; text-transform: uppercase; letter-spacing: 4px; color: #8c8680; margin-top: 4px; margin-bottom: 16px; font-weight: 500; }
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(46, 213, 115, 0.1);
+    border: 1px solid rgba(46, 213, 115, 0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    color: #2ed573;
+    font-weight: 600;
+    margin-bottom: 35px;
+}
+
+.status-badge .dot {
+    width: 6px; height: 6px; background: #2ed573; border-radius: 50%;
+    animation: blink 1.5s infinite alternate;
+}
+
+@keyframes blink { 100% { opacity: 0.4; } }
+
+/* LINK BUTTONS DENGAN GLASS EFFECT */
+.link-wrapper { display: flex; flex-direction: column; gap: 14px; margin-bottom: 35px; }
 
 .btn-link {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 15px 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #ffffff;
     text-decoration: none;
+    border-radius: 16px;
+    padding: 16px 20px;
     font-weight: 600;
     font-size: 14px;
-    border-radius: 14px;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    position: relative;
+    overflow: hidden;
 }
 
-.btn-link .icon { margin-right: 15px; font-size: 18px; }
+.main-btn {
+    background: linear-gradient(135deg, #e5c158 0%, #b8932b 100%);
+    color: #0b0908;
+    box-shadow: 0 8px 20px rgba(229, 193, 88, 0.2);
+}
+
+.sub-btn {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}
+
+.btn-content { display: flex; align-items: center; justify-content: center; gap: 12px; }
+.btn-link .icon { font-size: 16px; }
 
 .btn-link:hover {
-    background: rgba(212, 175, 55, 0.1);
-    border-color: #d4af37;
-    color: #d4af37;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.15);
 }
+.main-btn:hover { box-shadow: 0 12px 25px rgba(229, 193, 88, 0.3); }
+.sub-btn:hover { background: rgba(255, 255, 255, 0.08); border-color: rgba(229, 193, 88, 0.4); color: #e5c158;}
 
-/* SECTION HIGHLIGHT MENU */
-.menu-container {
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    border-radius: 16px;
-    padding: 20px 16px;
-    margin-bottom: 25px;
-    text-align: left;
-}
+/* SECTION MENU ONLINE CARD-STYLE */
+.menu-container { text-align: left; margin-bottom: 30px; }
+.menu-header { text-align: center; margin-bottom: 20px; }
+.menu-header h2 { font-size: 13px; font-weight: 600; letter-spacing: 3px; color: #e5c158; }
+.menu-header p { font-size: 11px; color: #6e6862; margin-top: 2px; }
 
-.menu-container h3 { font-size: 14px; color: #ffffff; margin-bottom: 15px; text-align: center; font-weight: 600; letter-spacing: 0.5px;}
-
-.menu-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
-
+/* Tabs Navigation */
+.menu-tabs { display: flex; gap: 6px; background: rgba(0, 0, 0, 0.3); padding: 5px; border-radius: 12px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.03); }
 .tab-btn {
-    flex: 1; padding: 8px 4px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #aaa; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 11px; transition: 0.2s;
-    white-space: nowrap;
+    flex: 1; padding: 10px 4px; background: transparent; border: none;
+    color: #8c8680; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 11px; transition: 0.3s;
 }
+.tab-btn.active { background: rgba(255, 255, 255, 0.07); color: #e5c158; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
 
-.tab-btn.active { background: #d4af37; color: #12100e; border-color: #d4af37; }
+/* Menu List & Cards */
+.menu-list { display: none; flex-direction: column; gap: 10px; }
+.menu-list.active { display: flex; animation: slideUp 0.4s ease forwards; }
 
-.menu-list { display: none; flex-direction: column; gap: 16px; }
-.menu-list.active { display: flex; animation: fadeIn 0.4s ease; }
-
-.menu-item {
+.menu-card {
     display: flex; justify-content: space-between; align-items: center;
-    font-size: 14px; position: relative;
+    padding: 14px 16px; background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 14px;
+    transition: 0.2s;
 }
+.menu-card:hover { background: rgba(255, 255, 255, 0.04); border-color: rgba(229, 193, 88, 0.2); transform: scale(1.01); }
 
-.menu-name { 
-    color: #e0e0e0; font-weight: 500; 
-    background: #191614; /* Nutupin garis putus-putus */
-    padding-right: 8px; z-index: 2;
+.menu-name { font-size: 14px; color: #ffffff; font-weight: 500; display: flex; align-items: center; gap: 6px; }
+.menu-desc { font-size: 11px; color: #6e6862; margin-top: 2px; font-weight: 300; }
+.menu-price { color: #e5c158; font-weight: 600; font-size: 14px; }
+
+/* Badge System */
+.badge {
+    font-size: 9px; padding: 2px 6px; background: rgba(229, 193, 88, 0.15);
+    color: #e5c158; border-radius: 6px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
 }
+.badge.gold { background: #e5c158; color: #0b0908; }
 
-/* LINE DOT RESTORAN PRESTISIUS */
-.menu-item::before {
-    content: ""; position: absolute; left: 0; right: 0;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.12); z-index: 1;
-}
+/* Special Border Left for Signatures */
+.menu-card.signature { border-left: 2px solid #e5c158; }
 
-.menu-price { color: #d4af37; font-weight: 600; background: #191614; padding-left: 8px; z-index: 2; }
-
-/* BOX JAM OPERASIONAL */
+/* OPERATIONAL BOX */
 .info-box {
     background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.03);
-    border-radius: 16px; padding: 18px; text-align: left; margin-bottom: 10px;
+    border-radius: 16px; padding: 16px; text-align: left;
 }
+.info-header { display: flex; align-items: center; gap: 14px; }
+.info-icon { font-size: 20px; }
+.info-header h4 { font-size: 13px; font-weight: 600; color: #ffffff; }
+.info-header p { font-size: 11px; color: #8c8680; margin-top: 1px; }
 
-.info-box h3 { font-size: 13px; color: #ffffff; margin-bottom: 8px; font-weight: 600; }
-.day-row { display: flex; justify-content: space-between; font-size: 13px; color: #b0b0b0; }
-.day-row strong { color: #d4af37; }
+/* BRANDING AGENT FOOTER */
+.footer { margin-top: 40px; font-size: 10px; color: #403b36; letter-spacing: 1px; text-transform: uppercase; }
+.footer span { color: #e5c158; font-weight: 600; }
 
-/* FOOTER BRANDING AGENT */
-.footer { margin-top: 35px; font-size: 11px; color: #555; }
-.footer span { color: #d4af37; font-weight: 600; }
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(5px); }
+/* ANIMATIONS */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(12px); }
     to { opacity: 1; transform: translateY(0); }
 }
